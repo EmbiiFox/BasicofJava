@@ -10,24 +10,24 @@ public class ExerciseSplitArray {
 	        numOfArray = sc.nextInt();
 	    } while (numOfArray <= 0);
 	         
-	    int A[] = new int[numOfArray];
+	    int intArr[] = new int[numOfArray];
 	    int evenArr[] = new int[numOfArray]; 
 	    int oddArr[] = new int[numOfArray]; 
 	         
 	    System.out.println("Nhập các phần tử cho mảng: ");
 	    for (int i = 0; i < numOfArray; i++) {
 	        System.out.print("Nhập phần tử thứ " + i + ": ");
-	        A[i] = sc.nextInt();
+	        intArr[i] = sc.nextInt();
 	    }
 	    numOfEvenArr = numOfOddArr =0;
 	         
 	    for (int i = 0; i < numOfArray; i++) {
-	        if (A[i] % 2 == 0) {
-	            evenArr[numOfEvenArr] = A[i];
+	        if (intArr[i] % 2 == 0) {
+	            evenArr[numOfEvenArr] = intArr[i];
 	            numOfEvenArr++;
 	        } 
 	        else {
-	            oddArr[numOfOddArr] = A[i];
+	            oddArr[numOfOddArr] = intArr[i];
 	            numOfOddArr++;
 	        }
 	    }
