@@ -22,28 +22,56 @@ public class ExerciseSort {
 		System.out.println("Input: "+ Arrays.toString(intArr));
 		
 		
-		System.out.println("Mang chua duoc sap xep, ban co muon sap xep khong?");
-		type= sc.next();
-		if(type=="Y") {
-			System.out.print("Chon 1 de sap xep theo thu tu tang dan.");
-			System.out.print("Chon 0 de sap xep theo thu tu giam dan.");
-			type= sc.next();
-			if(type=="1") {
-				Arrays.sort(intArr);
-				System.out.println("Kết quả sau khi sắp xếp theo thứ tự tăng dần là:"+ Arrays.toString(intArr));
-			}
-			else if (type=="0"){
-				for(int i=0; i< intArr.length/2; i++) {
-					temp= intArr[i];
-					intArr[i]= intArr[ intArr.length-1-i];
-					intArr[ intArr.length-1-i]=temp;
-				}
-				System.out.println("Kết quả sau khi sắp xếp theo thứ tự giam dần là:"+ Arrays.toString(intArr));
-			}			
-		}
-		else if(type=="N") {
-			
-		}
-		sc.close();
+		if (!sorted(intArr)) {
+			System.out.println("Mang chua duoc sap xep, ban co muon sap xep khong? (Y/N)");
+            type = sc.next();
+            if ("Y".equals(type)) {
+                System.out.print("Chon 1 de sap xep theo thu tu tang dan.");
+                System.out.print("Chon 0 de sap xep theo thu tu giam dan.");
+                type = sc.next();
+                if ("1".equals(type)) {
+                    Arrays.sort(intArr);
+                    System.out.println("Kết quả sau khi sắp xếp theo thứ tự tăng dần là:" + Arrays.toString(intArr));
+                } else if ("0".equals(type)) {
+                    for (int i = 0; i < intArr.length / 2; i++) {
+                        temp = intArr[i];
+                        intArr[i] = intArr[intArr.length - 1 - i];
+                        intArr[intArr.length - 1 - i] = temp;
+                    }
+                    System.out.println("Kết quả sau khi sắp xếp theo thứ tự giam dần là:" + Arrays.toString(intArr));
+                }
+            } 
+            else if ("N".equals(type)) {
+            }
+            sc.close();
+        } 
+		else {
+            System.out.println("Mang da duoc sap xep");
+	        }
+	    }
+
+	    public static boolean sorted(int intArr[]) {
+	        for (int i = 0; i < intArr.length - 1; i++) {
+	            if (check(intArr)) {
+	                if (intArr[i] < intArr[i + 1]) {
+	                    return false;
+	                }
+	            } else {
+	                if (intArr[i] > intArr[i + 1]) {
+	                    return false;
+	                }
+	            }
+	        }
+	        return true;
+	    }
+
+	    public static boolean check(int intArr[]) {
+	        int i = 0;
+	        for (; i < intArr.length; i++) {
+	            if (intArr[i] != intArr[i + 1]) {
+	                break;
+	            }
+	        }
+	        return intArr[i] > intArr[i + 1];
+	    }
 	}
-}
