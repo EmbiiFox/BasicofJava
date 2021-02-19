@@ -1,7 +1,7 @@
 package day5;
 import java.util.Scanner;
 public class MainV3 {
-private static Store storeObj	= new Store();
+	private static Store storeObj	= new Store();
 	
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
@@ -16,11 +16,11 @@ private static Store storeObj	= new Store();
 				sc.nextLine();
 				
 				switch (functionID) {
-					case 1: addBook(); 		break;
-					case 2: editBook(); 	break;
-					case 3: deleteBook(); 	break;
-					case 4: findBook(); 	break;
-					case 5: listBook(); 	break;
+					case 1: addCourse(); 		break;
+					case 2: editCourse(); 		break;
+					case 3: deleteCourse(); 	break;
+					case 4: findCourse(); 		break;
+					case 5: listCourse(); 		break;
 					case 6: 
 					default:
 						flag = false;
@@ -38,34 +38,34 @@ private static Store storeObj	= new Store();
 	}
 
 	public static void showMenu(){
-		myPrint("----------- BOOK MANAGER ----------- ");
-		myPrint("1. Add book");		// x
-		myPrint("2. Edit book");	// x
-		myPrint("3. Delete book");	//
-		myPrint("4. Find book");	// x
-		myPrint("5. List book");	// x
-		myPrint("6. Exit");			// x
+		myPrint("----------- COURSE MANAGER ----------- ");
+		myPrint("1. Add Course");
+		myPrint("2. Edit Course");
+		myPrint("3. Delete Course");	
+		myPrint("4. Find Course");
+		myPrint("5. List Course");
+		myPrint("6. Exit");
 		myPrint("Your choise [1-6]: ");
 	}
 	
-	public static void addBook(){
+	public static void addCourse(){
 		if(storeObj.checkFull() == false){
 			Scanner sc = new Scanner(System.in);
-			String bookName	= "";
-			String bookID	= "";
-			double bookPrice= 0;
+			String courseName	= "";
+			String courseID		= "";
+			double coursePrice  = 0;
 			
 			myPrint("ID: ");
-			bookID		= sc.nextLine();
+			courseID		= sc.nextLine();
 			
 			myPrint("Name: ");
-			bookName	= sc.nextLine();
+			courseName	= sc.nextLine();
 			
 			myPrint("Price: ");
-			bookPrice	= sc.nextDouble();
+			coursePrice	= sc.nextDouble();
 			
-			Book bookObj	= new Book(bookID, bookName, bookPrice);
-			storeObj.add(bookObj);
+			Course courseObj	= new Course(courseID, courseName, coursePrice);
+			storeObj.add(courseObj);
 			sc.close();
 		}else{
 			System.out.println("Store is full!");
@@ -76,51 +76,51 @@ private static Store storeObj	= new Store();
 		System.out.println(content);
 	}
 	
-	public static void deleteBook(){
+	public static void deleteCourse(){
 		Scanner sc = new Scanner(System.in);
 		
-		String bookID	= "";
+		String courseID	= "";
 		
 		myPrint("ID: ");
-		bookID		= sc.nextLine();
+		courseID		= sc.nextLine();
 		
-		storeObj.delete(bookID);
+		storeObj.delete(courseID);
 		sc.close();
 	}
 	
-	public static void findBook(){
+	public static void findCourse(){
 		Scanner sc = new Scanner(System.in);
 		
-		String bookID	= "";
+		String courseID	= "";
 		
 		myPrint("ID: ");
-		bookID		= sc.nextLine();
+		courseID		= sc.nextLine();
 		
-		storeObj.find(bookID);
+		storeObj.find(courseID);
 		sc.close();
 	}
 	
-	public static void editBook(){
+	public static void editCourse(){
 		Scanner sc = new Scanner(System.in);
 		
-		String bookName	= "";
-		String bookID	= "";
-		double bookPrice= 0;
+		String courseName	= "";
+		String courseID	= "";
+		double coursePrice= 0;
 		
 		myPrint("ID: ");
-		bookID		= sc.nextLine();
+		courseID		= sc.nextLine();
 		
 		myPrint("Name: ");
-		bookName	= sc.nextLine();
+		courseName	= sc.nextLine();
 		
 		myPrint("Price: ");
-		bookPrice	= sc.nextDouble();
+		coursePrice	= sc.nextDouble();
 		
-		storeObj.edit(bookID, bookName, bookPrice);
+		storeObj.edit(courseID, courseName, coursePrice);
 		sc.close();
 	}
 	
-	public static void listBook(){
+	public static void listCourse(){
 		storeObj.list();
 	}
 }

@@ -1,15 +1,16 @@
 package day5;
-
-public class Book {
+public class Course {
 	private String ID;
 	private String name;
 	private double price;
 	
-	public Book(String bookID, String bookName, double bookPrice){
-		this.setID(ID);
-		this.setName(name);
-		this.setPrice(price);
+	public Course(String courseID, String courseName, double coursePrice){
+
+			this.setID(ID);
+			this.setName(name);
+			this.setPrice(price);
 	}
+	
 	public String getID() {
 		return ID;
 	}
@@ -35,7 +36,7 @@ public class Book {
 	}
 	
 	public void showInfo() {
-		System.out.println("Book Info: ");
+		System.out.println("Course Info: ");
 		System.out.println("- ID \t\t:" + this.getID());
 		System.out.println("- Name \t\t:" + this.getName());
 		System.out.println("- Price  \t:" + this.getPrice());
