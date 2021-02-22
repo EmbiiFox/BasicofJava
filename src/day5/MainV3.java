@@ -66,7 +66,6 @@ public class MainV3 {
 			
 			Course courseObj	= new Course(courseID, courseName, coursePrice);
 			storeObj.add(courseObj);
-			sc.close();
 		}else{
 			System.out.println("Store is full!");
 		}
