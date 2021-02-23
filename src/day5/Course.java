@@ -1,38 +1,37 @@
 package day5;
 public class Course {
-	private String ID;
-	private String name;
-	private double price;
+	private String courseID;
+	private String courseName;
+	private double coursePrice;
 	
 	public Course(String courseID, String courseName, double coursePrice){
-
-			this.setID(ID);
-			this.setName(name);
-			this.setPrice(price);
+			this.setID(courseID);
+			this.setName(courseName);
+			this.setPrice(coursePrice);
 	}
 	
 	public String getID() {
-		return ID;
+		return courseID;
 	}
 	
 	public void setID(String ID) {
-		this.ID = ID;
+		this.courseID = ID;
 	}
 	
 	public String getName() {
-		return name;
+		return courseName;
 	}
 	
 	public void setName(String name) {
-		this.name = name;
+		this.courseName = name;
 	}
 	
 	public double getPrice() {
-		return price;
+		return coursePrice;
 	}
 	
 	public void setPrice(double price) {
-		this.price = price;
+		this.coursePrice = price;
 	}
 	
 	public void showInfo() {

@@ -84,7 +84,6 @@ public class MainV3 {
 		courseID		= sc.nextLine();
 		
 		storeObj.delete(courseID);
-		sc.close();
 	}
 	
 	public static void findCourse(){
@@ -96,7 +95,6 @@ public class MainV3 {
 		courseID		= sc.nextLine();
 		
 		storeObj.find(courseID);
-		sc.close();
 	}
 	
 	public static void editCourse(){
@@ -116,7 +114,6 @@ public class MainV3 {
 		coursePrice	= sc.nextDouble();
 		
 		storeObj.edit(courseID, courseName, coursePrice);
-		sc.close();
 	}
 	
 	public static void listCourse(){
